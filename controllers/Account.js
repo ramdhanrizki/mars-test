@@ -207,6 +207,7 @@ module.exports = {
             avg: (item.values.value1 + item.values.value2) / 2
           })
         });
+        return res.send(resp);
         gvalue1 += tvalue1
         gvalue2 += tvalue2
         gavg += tavg
@@ -223,7 +224,7 @@ module.exports = {
       }
       result.push({
         name: 'GRAND TOTAL',
-        value1: gvalue2,
+        value1: gvalue1,
         value2: gvalue2,
         avg: gavg
       })
@@ -337,28 +338,5 @@ module.exports = {
       { package_name: "ABC", author_name: "Author 1" },
       { package_name: "XYZ", author_name: "Author 2" }
     );
-
-   
-
-    // worksheet
-    //   .addRows(rows);
-
-    // save workbook to disk
-   
-
-    // workbook
-    //   .xlsx
-    //   .writeFile('public/data/'+name)
-    //   .then(() => {
-    //     return res.status(200).json({
-    //       status: 200,
-    //       message: 'success',
-    //       data: 'http://localhost:3000/public/data/'+name
-    //     })
-    //     console.log("saved");
-    //   })
-    //   .catch((err) => {
-    //     console.log("err", err);
-    //   });
   }
 };
